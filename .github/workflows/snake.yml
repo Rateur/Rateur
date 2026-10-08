@@ -2,13 +2,8 @@ name: Generate Snake Animation
 
 on:
   schedule:
-    # Exécuter toutes les 12 heures
     - cron: "0 */12 * * *"
-  
-  # Permet de déclencher l'action manuellement depuis l'onglet Actions
   workflow_dispatch:
-  
-  # S'exécute à chaque push sur la branche main (ou master selon ta configuration)
   push:
     branches:
     - main
@@ -21,23 +16,19 @@ jobs:
     timeout-minutes: 5
     
     steps:
-      # 1. Clone le repository
       - name: Checkout
         uses: actions/checkout@v3
 
-      # 2. Génère l'animation SVG avec nos couleurs Cyberpunk
       - name: Generate github-contribution-grid-snake.svg
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
-          # On configure un fond très sombre (#0D1117) et un dégradé de verts néon pour les cases et le serpent
           outputs: |
             dist/github-contribution-grid-snake.svg?palette=github-dark
             dist/github-contribution-grid-snake-dark.svg?color_snake=#2EA043&color_dots=#0D1117,#0f3a15,#1b6a27,#2EA043,#45eb65
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
             
-      # 3. Pousse l'image générée vers une branche orpheline nommée "output"
       - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v3.1.0
         with:
