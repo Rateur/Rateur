@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="[https://cdn.imgchest.com/files/ed1e4e2fa668](https://imgchest.com/p/vj4jlpxw3y8).jpg" width="100%" alt="Banner Cowboy Bebop" />
+  <img src="https://cdn.imgchest.com/files/a1de39f0c0b7.jpg" width="100%" alt="Banner Cowboy Bebop" />
 </p>
 
 <p align="center">
