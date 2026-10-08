@@ -1,80 +1,128 @@
-<h1 align="center">Salut 👋, je suis Valentin Périès</h1>
-<h3 align="center">Data Scientist, Développeur IA & Creative Dev basé à Lyon</h3>
+<p align="center">
+  <img src="https://cdn.imgchest.com/files/ed1e4e2fa668.jpg" width="100%" alt="Banner Cowboy Bebop" />
+</p>
 
 <p align="center">
-  <a href="https://valentinperies.fr/" target="_blank">
-    <img alt="Portfolio" src="https://img.shields.io/badge/Portfolio-valentinperies.fr-blue?style=for-the-badge&logo=googlechrome">
-  </a>
-  <a href="https://valentinperies.fr/photo" target="_blank">
-    <img alt="Photo" src="https://img.shields.io/badge/Photographie-Galerie-purple?style=for-the-badge&logo=instagram">
-  </a>
-  <a href="mailto:contact@valentinperies.fr">
-    <img alt="Email" src="https://img.shields.io/badge/Email-contact%40valentinperies.fr-red?style=for-the-badge&logo=gmail">
+  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=26&pause=1000&color=2EA043&center=true&vCenter=true&width=600&lines=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Valentin+P%C3%A9ri%C3%A8s%E3%81%A7%E3%81%99;Salut,+je+suis+Valentin+P%C3%A9ri%C3%A8s;Hello,+I+am+Valentin+P%C3%A9ri%C3%A8s" alt="Typing Title" />
+</p>
+
+<p align="center">
+  <a href="https://valentinperies.fr/">
+    <img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=googlechrome&logoColor=2EA043&labelColor=0D1117&color=2EA043" alt="Portfolio" />
   </a>
 </p>
 
----
+<br>
 
-### <img src="https://api.iconify.design/mdi/account-circle.svg?color=%237d8590" width="26" align="top"> À propos de moi
+### <img src="https://api.iconify.design/mdi/console-network.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Terminal d'accès système
 
-Passionné d'informatique depuis plus de 7 ans, j'explore le développement avec une approche créative et technique. Mon parcours m'a naturellement conduit vers l'intelligence artificielle et la data science. J'aime concevoir des solutions performantes, qu'il s'agisse d'applications métiers, d'assistants IA ou de plateformes web sur mesure.
+```bash
+$ ssh vperies@bebop.local
+Connecting to bebop.local...
 
-- **Actuellement :** Co-fondateur & Tech Lead chez AnthillAI, et développeur web freelance.
-- **En formation :** Développeur IA chez Simplon (2025-2027) pour approfondir mes compétences en Data, MLOps et conception d'applications web.
-- **En dehors du code :** La photographie nourrit ma sensibilité visuelle et mon sens du détail. Je suis également un passionné de self-hosting (gestion de mon propre serveur *Atlas*) et un grand amateur de LEGO et de culture pop.
-- **Mon objectif actuel :** Mettre mes compétences au service de projets concrets et innovants, notamment à travers une alternance en développement IA.
+      ____  ________  ____  ____
+     / __ )/ ____/ / / / / / __ \
+    / __  / /_  / / / / / / /_/ /
+   / /_/ / __/ / /_/ / / / ____/
+  /_____/_/    \____/_/_/_/
 
----
+Welcome to BEBOP Mainframe (Debian GNU/Linux 12) - Unauthorized access is prohibited.
 
-### <img src="https://api.iconify.design/mdi/tools.svg?color=%237d8590" width="26" align="top"> Stack Technique & Outils
+vperies@bebop:~$ cat /etc/motd
+[NAME]    Valentin Périès
+[ROLE]    Ingénieur IA (End-to-End) & Data Scientist
+[BASE]    Lyon, France
+[MISSION] Tech Lead @ AnthillAI | Développeur IA @ Simplon
 
-<table width="100%">
-  <tr>
-    <td align="center" width="25%">
-      <img src="https://api.iconify.design/mdi/brain.svg?color=%237d8590" width="35" /><br>
-      <b>Data & IA</b>
-    </td>
-    <td width="75%">
-      <img src="https://img.shields.io/badge/Python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python" />
-      <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas" />
-      <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy" />
-      <img src="https://img.shields.io/badge/Scikit_Learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-Learn" />
-      <img src="https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white" alt="TensorFlow" />
-      <img src="https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white" alt="Keras" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://api.iconify.design/mdi/laptop.svg?color=%237d8590" width="35" /><br>
-      <b>Développement Web</b>
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI" />
-      <img src="https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next JS" />
-      <img src="https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS" />
-      <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E" alt="JavaScript" />
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="https://api.iconify.design/mdi/server.svg?color=%237d8590" width="35" /><br>
-      <b>DevOps & Serveurs</b>
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Docker-0db7ed?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
-      <img src="https://img.shields.io/badge/Git-F05033?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
-      <img src="https://img.shields.io/badge/SQL-000000?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQL" />
-      <img src="https://img.shields.io/badge/Debian-A81D33?style=for-the-badge&logo=debian&logoColor=white" alt="Debian" />
-    </td>
-  </tr>
-</table>
+vperies@bebop:~$ systemctl status current-tasks.service
+● current-tasks.service - Active Projects
+   Loaded: loaded (/etc/systemd/system/current-tasks.service; enabled)
+   Active: active (running) since system boot; 1337 days ago
+   Tasks:
+     - [Data] Observatoire de la Parité (Jupyter, Pandas)
+     - [IA] Jarvis : Assistant vocal 100% local (Ollama)
+     - [Build] MOC LEGO alternatif (Casque L. Hamilton)
+```
 
----
+<br>
 
-### <img src="https://api.iconify.design/mdi/link-variant.svg?color=%237d8590" width="26" align="top"> Me retrouver
+### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Missions Actives
 
-- <img src="https://api.iconify.design/mdi/web.svg?color=%237d8590" width="18" align="top"> **Portfolio & Expériences :** [valentinperies.fr](https://valentinperies.fr/)
-- <img src="https://api.iconify.design/mdi/camera-outline.svg?color=%237d8590" width="18" align="top"> **Mon univers photo :** [valentinperies.fr/photo](https://valentinperies.fr/photo)
-- <img src="https://api.iconify.design/mdi/email-outline.svg?color=%237d8590" width="18" align="top"> **Me contacter :** [contact@valentinperies.fr](mailto:contact@valentinperies.fr)
+```bash
+vperies@bebop:~$ ./fetch_missions.sh --status=active
+
+[+] CONNECTING TO MAINFRAME... SUCCESS
+[+] DOWNLOADING MISSION LOGS...
+
+================================================================================
+ ID  | MISSION NAME                    | TYPE         | STATUS
+================================================================================
+ 01  | OBSERVATOIRE DE LA PARITÉ       | [DATA]       | 🟢 DEPLOYED
+     | -> Analyse & visualisation de la répartition de la parole médiatique.
+     | -> [LIVE] https://opendata2025.netlify.app/
+     | -> [CODE] https://github.com/Rateur/opendata
+--------------------------------------------------------------------------------
+ 02  | NUTRI-PREDICT                   | [FULL-STACK] | 🟠 IN PROGRESS
+     | -> Application full-stack de suivi calorique avec projection IA.
+     | -> [REPO] https://github.com/Rateur/Nutri-Predict (WIP)
+================================================================================
+```
+
+<br>
+
+### <img src="https://api.iconify.design/mdi/layers-triple-outline.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Stack Technique
+
+```bash
+vperies@bebop:~$ tree /mnt/brain/skills
+
+/mnt/brain/skills
+├── 🧠 Intelligence Artificielle
+│   ├── Modélisation : TensorFlow, Scikit-Learn
+│   └── GenAI : Ollama, RAG, LLMs
+├── 📊 Data Science & MLOps
+│   ├── Data : Python, Pandas, NumPy
+│   └── Ops : MLflow, Docker
+└── 💻 Architecture & Interface
+    ├── Back-End : Debian, FastAPI, PostgreSQL
+    └── Front-End : Next.js, TailwindCSS, JavaScript
+
+3 directories, 6 files
+```
+
+<br>
+
+### <img src="https://api.iconify.design/mdi/chart-timeline-variant-shimmer.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rateur&layout=compact&theme=tokyonight&bg_color=0D1117&hide_border=true&title_color=2EA043&text_color=2EA043" alt="Langages les plus utilisés" />
+</p>
+
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake.svg">
+    <img alt="Snake Animation Cyberpunk" src="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
+  </picture>
+</p>
+
+<br>
+
+### <img src="https://api.iconify.design/mdi/satellite-uplink.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Secure Commlink
+
+```bash
+vperies@bebop:~$ ./init_commlink.sh
+[+] GENERATING SECURE ENCRYPTION KEYS... DONE.
+[+] ESTABLISHING CONNECTION...
+
+    [📡 LINKEDIN] -> https://linkedin.com/in/valentin-peries
+    [📧 E-MAIL]   -> contact@valentinperies.fr
+
+> END OF TRANSMISSION.
+```
+
+<br>
+<br>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=16&pause=3000&color=2EA043&center=true&vCenter=true&width=600&lines=See+You+Space+Cowboy..." alt="See You Space Cowboy..." />
+</p>
