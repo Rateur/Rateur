@@ -14,7 +14,7 @@
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/console-network.svg?color=72ff72" width="24" height="24" style="vertical-align: middle;" /> Terminal d'accès système
+### <img src="https://api.iconify.design/mdi/console-network.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Terminal d'accès système
 
 ```text
 vperies@bebop:~$ cat /etc/motd
@@ -35,7 +35,7 @@ vperies@bebop:~$ systemctl status current-tasks.service
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=42a852" width="24" height="24" style="vertical-align: middle;" /> Missions Actives
+### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Missions Actives
 
 ```text
 vperies@bebop:~$ ./fetch_missions.sh --status=active
@@ -59,7 +59,7 @@ vperies@bebop:~$ ./fetch_missions.sh --status=active
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/layers-triple-outline.svg?color=2ea043" width="24" height="24" style="vertical-align: middle;" /> Stack Technique
+### <img src="https://api.iconify.design/mdi/layers-triple-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Stack Technique
 
 ```text
 vperies@bebop:~$ tree /mnt/brain/skills
@@ -80,7 +80,7 @@ vperies@bebop:~$ tree /mnt/brain/skills
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/chart-timeline-variant-shimmer.svg?color=1e7031" width="24" height="24" style="vertical-align: middle;" /> Stats
+### <img src="https://api.iconify.design/mdi/chart-timeline-variant-shimmer.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Stats
 
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rateur&layout=compact&theme=tokyonight&bg_color=0D1117&hide_border=true&title_color=72FF72&text_color=42A852" alt="Langages les plus utilisés" />
@@ -96,7 +96,7 @@ vperies@bebop:~$ tree /mnt/brain/skills
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/satellite-uplink.svg?color=72ff72" width="24" height="24" style="vertical-align: middle;" /> Secure Commlink
+### <img src="https://api.iconify.design/mdi/satellite-uplink.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Secure Commlink
 
 ```text
 vperies@bebop:~$ ./init_commlink.sh
@@ -113,5 +113,5 @@ vperies@bebop:~$ ./init_commlink.sh
 <br>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=16&pause=3000&color=42A852&center=true&vCenter=true&width=600&lines=See+You+Space+Cowboy..." alt="See You Space Cowboy..." />
+  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=16&pause=3000&color=72FF72&center=true&vCenter=true&width=600&lines=See+You+Space+Cowboy..." alt="See You Space Cowboy..." />
 </p>
