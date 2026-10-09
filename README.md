@@ -21,7 +21,7 @@ vperies@bebop:~$ cat /etc/motd
 [NAME]    Valentin Périès
 [ROLE]    Ingénieur IA (End-to-End) & Data Scientist
 [BASE]    Lyon, France
-[MISSION] Tech Lead @ AnthillAI | Développeur IA @ Simplon
+[MISSION] Tech Lead @ AnthillAI | Développeur IA @ EPSI
 
 vperies@bebop:~$ systemctl status current-tasks.service
 ● current-tasks.service - Active Projects
