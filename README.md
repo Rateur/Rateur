@@ -3,12 +3,14 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=26&pause=1000&color=72FF72&center=true&vCenter=true&width=600&lines=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Valentin+P%C3%A9ri%C3%A8s%E3%81%A7%E3%81%99;Salut,+je+suis+Valentin+P%C3%A9ri%C3%A8s;Hello,+I+am+Valentin+P%C3%A9ri%C3%A8s" alt="Typing Title" />
-</p>
-
-<p align="center">
   <a href="https://valentinperies.fr/">
     <img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&logo=googlechrome&logoColor=72FF72&labelColor=0D1117&color=1A4B27" alt="Portfolio" />
+  </a>&nbsp;&nbsp;
+  <a href="https://www.instagram.com/valentin.peries/">
+    <img src="https://img.shields.io/badge/Instagram-0D1117?style=for-the-badge&logo=instagram&logoColor=72FF72&labelColor=0D1117&color=1A4B27" alt="Instagram" />
+  </a>&nbsp;&nbsp;
+  <a href="https://www.linkedin.com/in/valentin-peries/">
+    <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&logo=linkedin&logoColor=72FF72&labelColor=0D1117&color=1A4B27" alt="LinkedIn" />
   </a>
 </p>
 
