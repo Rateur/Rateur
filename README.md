@@ -129,8 +129,8 @@ vperies@bebop:~$ ./init_commlink.sh --encrypt --protocol=TLS1.3
 
     +------------+--------------------------------------+
     | LINKEDIN   | linkedin.com/in/valentin-peries      |
-    | E-MAIL     | contact@valentinperies.fr             |
-    | WEBSITE    | valentinperies.fr                     |
+    | E-MAIL     | contact@valentinperies.fr            |
+    | WEBSITE    | valentinperies.fr                    |
     +------------+--------------------------------------+
 
 > SIGNAL STRENGTH: ========.. 82%
