@@ -25,13 +25,14 @@
 ```text
 vperies@bebop:~$ cat /etc/motd
 
-  +----------+----------------------------------------------+
-  | NAME     | Valentin Peries                              |
-  | ROLE     | Ingenieur IA (End-to-End) & Data Scientist   |
-  | BASE     | Lyon, France                                 |
-  | MISSION  | Tech Lead @ AnthillAI                        |
-  |          | Developpeur IA @ EPSI                        |
-  +----------+----------------------------------------------+
+  +----------+------------------------------------------------------+
+  | NAME     | Valentin Peries                                      |
+  | ROLE     | Developpeur IA                                       |
+  | BASE     | Lyon, France                                         |
+  | STUDIES  | Etudiant EPSI Lyon, Master Expert IA et Data science |
+  | SEARCH   | Alternance de 2 ans pour ce master, des maintenant   |
+  |          | Lyon, hybride ou teletravail                         |
+  +----------+------------------------------------------------------+
 
 vperies@bebop:~$ systemctl status current-tasks.service
   current-tasks.service - Active Projects
@@ -40,35 +41,53 @@ vperies@bebop:~$ systemctl status current-tasks.service
     Memory: 4.2G (limit: unlimited)
     CGroup: /system.slice/current-tasks.service
     Tasks:
-      |- PID 001 [Data]  -> Observatoire de la Parite (Jupyter, Pandas)
-      |- PID 002 [IA]    -> Jarvis : Assistant vocal 100% local (Ollama)
+      |- PID 001 [IA]    -> IA de famille sur le NAS (Ollama, 1 RAG par personne)
+      |- PID 002 [Web]   -> SevenArtList : watchlist a deux (Next.js, Supabase)
       '- PID 003 [Build] -> MOC LEGO alternatif (Casque L. Hamilton)
 ```
 
 <br>
 
-### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Missions Actives
+### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Missions
 
 ```text
-vperies@bebop:~$ ./fetch_missions.sh --status=active --decrypt
+vperies@bebop:~$ ./fetch_missions.sh --status=all --decrypt
 
 [+] AUTHENTICATING TO MAINFRAME... ========== SUCCESS
 [+] DECRYPTING MISSION FILES...    ========== DONE
 [+] DOWNLOADING MISSION LOGS...
 
-+----+-----------------------------------+--------------+---------------+
-| ID | MISSION NAME                      | TYPE         | STATUS        |
-+----+-----------------------------------+--------------+---------------+
-| 01 | OBSERVATOIRE DE LA PARITE         | [DATA]       | > DEPLOYED    |
-|    | -> Analyse & visualisation de la  |              |               |
-|    |    repartition de la parole       |              |               |
-|    |    mediatique.                    |              |               |
-+----+-----------------------------------+--------------+---------------+
-| 02 | NUTRI-PREDICT                     | [FULL-STACK] | > IN PROGRESS |
-|    | -> Application full-stack de      |              |               |
-|    |    suivi calorique avec           |              |               |
-|    |    projection IA.                 |              |               |
-+----+-----------------------------------+--------------+---------------+
++----+----------------------------------------------+--------------+---------------+
+| ID | MISSION NAME                                 | TYPE         | STATUS        |
++----+----------------------------------------------+--------------+---------------+
+| 01 | NUTRI-PREDICT                                | [FULL-STACK] | > DONE        |
+|    | -> Variation de poids d'une portion.         |              |               |
+|    |    Certification RNCP 2026.                  |              |               |
+|    |    R2 0,985 sur donnees simulees.            |              |               |
+|    |    Regression lineaire : 0,959.              |              |               |
++----+----------------------------------------------+--------------+---------------+
+| 02 | WILDAIPRINT                                  | [VISION]     | > RE-TESTED   |
+|    | -> 83 % annonces, 26 % sur un vrai jeu       |              |               |
+|    |    de test (38 photos). Fuite corrigee.      |              |               |
+|    |    github.com/Rateur/WildAIprint-Modele-CNN  |              |               |
+|    |    github.com/Rateur/wildaiprint-App         |              |               |
++----+----------------------------------------------+--------------+---------------+
+| 03 | OBSERVATOIRE DE LA PARITE                    | [DATA]       | > DEPLOYED    |
+|    | -> 33 chaines sur 35 en 2020 : les femmes    |              |               |
+|    |    parlent moins de la moitie du temps.      |              |               |
+|    |    github.com/Rateur/opendata                |              |               |
+|    |    opendata2025.netlify.app                  |              |               |
++----+----------------------------------------------+--------------+---------------+
+| 04 | IA DE FAMILLE                                | [IA LOCALE]  | > IN PROGRESS |
+|    | -> Assistant sur le NAS de la maison.        |              |               |
+|    |    Ollama, 1 RAG par personne,               |              |               |
+|    |    0 octet dans le cloud.                    |              |               |
++----+----------------------------------------------+--------------+---------------+
+| 05 | SEVENARTLIST                                 | [FULL-STACK] | > IN PROGRESS |
+|    | -> Watchlist a deux, synchronisee en         |              |               |
+|    |    temps reel (Next.js, Supabase).           |              |               |
+|    |    github.com/Rateur/SevenArtList            |              |               |
++----+----------------------------------------------+--------------+---------------+
 ```
 
 <br>
@@ -79,19 +98,21 @@ vperies@bebop:~$ ./fetch_missions.sh --status=active --decrypt
 vperies@bebop:~$ tree /mnt/brain/skills --dirsfirst
 
 /mnt/brain/skills
-|-- Intelligence Artificielle
-|   |-- Modelisation ... TensorFlow, Scikit-Learn, PyTorch
-|   '-- GenAI .......... Ollama, RAG, LLMs, LangChain
+|-- IA & ML
+|   |-- Modelisation ... scikit-learn, TensorFlow, Keras, MLflow
+|   '-- GenAI .......... LLM, MCP, n8n
 |
-|-- Data Science & MLOps
-|   |-- Data ........... Python, Pandas, NumPy, Matplotlib
-|   '-- Ops ............ MLflow, Docker, Git, CI/CD
+|-- Data
+|   '-- Data ........... Python, Pandas, NumPy, Streamlit
 |
-'-- Architecture & Interface
-    |-- Back-End ....... Debian, FastAPI, PostgreSQL, REST
-    '-- Front-End ...... Next.js, TailwindCSS, JavaScript
+|-- Back & MLOps
+|   |-- Back-End ....... FastAPI, Flask, SQL, SQLite
+|   '-- Ops ............ Docker, CI/CD, pytest
+|
+'-- Interface
+    '-- Front-End ...... Next.js, React, Three.js, WebGL
 
-3 directories, 6 modules -- all systems nominal
+4 directories, 6 modules -- all systems nominal
 ```
 
 <br>
