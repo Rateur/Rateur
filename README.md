@@ -42,7 +42,7 @@ vperies@bebop:~$ systemctl status current-tasks.service
     CGroup: /system.slice/current-tasks.service
     Tasks:
       |- PID 001 [IA]    -> IA de famille sur le NAS (Ollama, 1 RAG par personne)
-      |- PID 002 [Web]   -> SevenArtList : watchlist a deux (Next.js, Supabase)
+      |- PID 002 [Web]   -> SevenArtList : films, streaming, watchlist (Next.js)
       '- PID 003 [Build] -> MOC LEGO alternatif (Casque L. Hamilton)
 ```
 
@@ -84,8 +84,8 @@ vperies@bebop:~$ ./fetch_missions.sh --status=all --decrypt
 |    |    0 octet dans le cloud.                    |              |               |
 +----+----------------------------------------------+--------------+---------------+
 | 05 | SEVENARTLIST                                 | [FULL-STACK] | > IN PROGRESS |
-|    | -> Watchlist a deux, synchronisee en         |              |               |
-|    |    temps reel (Next.js, Supabase).           |              |               |
+|    | -> Trouver un film, voir ou le regarder,     |              |               |
+|    |    suivre sa watchlist (Next.js, Supabase).  |              |               |
 |    |    github.com/Rateur/SevenArtList            |              |               |
 +----+----------------------------------------------+--------------+---------------+
 ```
