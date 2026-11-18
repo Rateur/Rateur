@@ -93,7 +93,9 @@ class Face:
         for i, (t, cmap, gs, k) in enumerate(self.fonts):
             if ord(ch) in cmap:
                 return i, cmap[ord(ch)]
-        raise KeyError(f"glyphe absent : {ch!r}")
+        if ch != " ":
+            return self.lookup(" ")
+        raise KeyError("espace absente")
 
     def advance(self, ch):
         i, g = self.lookup(ch)
@@ -745,7 +747,7 @@ def fetch_live():
             p = e.get("payload", {})
             ref = (p.get("ref") or "").replace("refs/heads/", "").replace("refs/tags/", "")
             kind = {"branch": "branche", "tag": "tag", "repository": "dépôt"}.get(p.get("ref_type"), "")
-            detail = {"PushEvent": lambda: f"→ {ref}" if ref else "",
+            detail = {"PushEvent": lambda: ref,
                       "CreateEvent": lambda: f"{kind} {ref}".strip() if p.get("ref_type") != "repository" else "dépôt",
                       "ReleaseEvent": lambda: p.get("release", {}).get("tag_name", ""),
                       "PullRequestEvent": lambda: f"#{p.get('number', '')} {p.get('action', '')}",
