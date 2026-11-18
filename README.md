@@ -1,166 +1,89 @@
+<div align="center">
+
+<img src="./assets/banner.svg" width="100%" alt="Valentin Périès, développeur IA à Lyon, en recherche d'alternance de 2 ans" />
+
+<br/><br/>
+
+<a href="https://valentinperies.fr/"><img src="./assets/btn-portfolio.svg" height="46" alt="Portfolio : valentinperies.fr" /></a>&nbsp;
+<a href="https://www.linkedin.com/in/valentin-peries/"><img src="./assets/btn-linkedin.svg" height="46" alt="LinkedIn : in/valentin-peries" /></a>&nbsp;
+<a href="mailto:contact@valentinperies.fr"><img src="./assets/btn-email.svg" height="46" alt="E-mail : contact@valentinperies.fr" /></a>&nbsp;
+<a href="https://www.instagram.com/valentin.peries/"><img src="./assets/btn-instagram.svg" height="46" alt="Instagram : @valentin.peries" /></a>
+
+</div>
+
+<br/>
+
+<img src="./assets/title-transmission.svg" width="100%" alt="Session 01 — Transmission" />
+
+Développeur IA, en **Master Expert IA & Data Science à l'EPSI Lyon**.
+J'entraîne des modèles, je les teste sur de vraies données (même quand le score baisse), puis je construis l'app autour : FastAPI côté back, Next.js côté front.
+
+En ce moment : **Sumi**, mon nouveau projet en **React**.
+
+Je cherche une **alternance de 2 ans**, à Lyon, en hybride ou en télétravail, **dès maintenant**.
+
+<a href="mailto:contact@valentinperies.fr"><img src="./assets/bounty.svg" width="100%" alt="Avis de prime : contrat recherché, alternance de 2 ans. Valentin Périès, développeur IA. Master Expert IA & Data Science, EPSI Lyon. Lyon, hybride ou télétravail. Départ dès maintenant. Contact : contact@valentinperies.fr" /></a>
+
+<sub>Hors mission : un MOC LEGO alternatif, le casque de L. Hamilton.</sub>
+
+<br/>
+
+<img src="./assets/title-missions.svg" width="100%" alt="Session 02 — Missions" />
+
 <p align="center">
-  <img src="./BANNER_GITHUB.jpg" width="100%" alt="Banner Cowboy Bebop" />
+  <img src="./assets/mission-sumi.svg" width="100%" alt="Mission 07, nouveau : Sumi, projet React, en cours. Démo et détails à venir." />
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=26&pause=1000&color=72FF72&center=true&vCenter=true&width=600&lines=%E3%81%93%E3%82%93%E3%81%AB%E3%81%A1%E3%81%AF%E3%80%81Valentin+P%C3%A9ri%C3%A8s%E3%81%A7%E3%81%99;Salut,+je+suis+Valentin+P%C3%A9ri%C3%A8s;Hello,+I+am+Valentin+P%C3%A9ri%C3%A8s" alt="Typing Title" />
+  <img src="./assets/mission-01.svg" width="49%" alt="Mission 01, Nutri-Predict, full-stack, livré : prédit la variation de poids d'une portion. Certification RNCP 2026. R² 0,985 sur données simulées, régression linéaire 0,959." />
+  <a href="https://github.com/Rateur/WildAIprint-Modele-CNN"><img src="./assets/mission-02.svg" width="49%" alt="Mission 02, WildAIprint, vision, re-testé : 83 % annoncés, 26 % sur un vrai jeu de test de 38 photos, fuite de données corrigée." /></a>
+  <a href="https://opendata2025.netlify.app"><img src="./assets/mission-03.svg" width="49%" alt="Mission 03, Observatoire de la parité, data, déployé : en 2020, sur 33 chaînes sur 35, les femmes parlent moins de la moitié du temps." /></a>
+  <img src="./assets/mission-04.svg" width="49%" alt="Mission 04, IA de famille, IA locale, en cours : assistant sur le NAS de la maison, Ollama, un RAG par personne, zéro octet dans le cloud." />
+  <a href="https://github.com/Rateur/SevenArtList"><img src="./assets/mission-05.svg" width="49%" alt="Mission 05, SevenArtList, full-stack, en cours : trouver un film, voir où le regarder, suivre sa watchlist. Next.js et Supabase." /></a>
+  <a href="mailto:contact@valentinperies.fr"><img src="./assets/mission-06.svg" width="49%" alt="Mission 06, ouverte : votre projet ici. Alternance de 2 ans, Lyon, hybride ou télétravail." /></a>
 </p>
+
+<p align="center"><sub>
+Code : <a href="https://github.com/Rateur/WildAIprint-Modele-CNN">WildAIprint (modèle)</a> ·
+<a href="https://github.com/Rateur/wildaiprint-App">WildAIprint (app)</a> ·
+<a href="https://github.com/Rateur/opendata">Observatoire de la parité</a> ·
+<a href="https://github.com/Rateur/SevenArtList">SevenArtList</a>
+</sub></p>
+
+<br/>
+
+<img src="./assets/title-radar.svg" width="100%" alt="Session 03 — Radar : stack détectée" />
 
 <p align="center">
-  <a href="https://valentinperies.fr/">
-    <img src="https://img.shields.io/badge/Portfolio-0D1117?style=for-the-badge&labelColor=0D1117&color=1A4B27" alt="Portfolio" />
-  </a>&nbsp;&nbsp;
-  <a href="https://www.instagram.com/valentin.peries/">
-    <img src="https://img.shields.io/badge/Instagram-0D1117?style=for-the-badge&labelColor=0D1117&color=1A4B27" alt="Instagram" />
-  </a>&nbsp;&nbsp;
-  <a href="https://www.linkedin.com/in/valentin-peries/">
-    <img src="https://img.shields.io/badge/LinkedIn-0D1117?style=for-the-badge&labelColor=0D1117&color=1A4B27" alt="LinkedIn" />
-  </a>
+  <img src="./assets/radar.svg" width="100%" alt="Stack. IA et ML : scikit-learn, TensorFlow, Keras, MLflow, LLM, MCP, n8n, Ollama. Data : Python, Pandas, NumPy, Streamlit. Back et MLOps : FastAPI, Flask, SQL, SQLite, Docker, CI/CD, pytest, Supabase. Interface : Next.js, React, Three.js, WebGL." />
 </p>
 
-<br>
+<br/>
 
-### <img src="https://api.iconify.design/mdi/console-network.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Terminal d'accès système
-
-```text
-vperies@bebop:~$ cat /etc/motd
-
-  +----------+------------------------------------------------------+
-  | NAME     | Valentin Peries                                      |
-  | ROLE     | Developpeur IA                                       |
-  | BASE     | Lyon, France                                         |
-  | STUDIES  | Etudiant EPSI Lyon, Master Expert IA et Data science |
-  | SEARCH   | Alternance de 2 ans pour ce master, des maintenant   |
-  |          | Lyon, hybride ou teletravail                         |
-  +----------+------------------------------------------------------+
-
-vperies@bebop:~$ systemctl status current-tasks.service
-  current-tasks.service - Active Projects
-    Loaded: loaded (/etc/systemd/system/current-tasks.service; enabled)
-    Active: active (running) since system boot; 1337 days ago
-    Memory: 4.2G (limit: unlimited)
-    CGroup: /system.slice/current-tasks.service
-    Tasks:
-      |- PID 001 [IA]    -> IA de famille sur le NAS (Ollama, 1 RAG par personne)
-      |- PID 002 [Web]   -> SevenArtList : films, streaming, watchlist (Next.js)
-      '- PID 003 [Build] -> MOC LEGO alternatif (Casque L. Hamilton)
-```
-
-<br>
-
-### <img src="https://api.iconify.design/mdi/folder-star-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Missions
-
-```text
-vperies@bebop:~$ ./fetch_missions.sh --status=all --decrypt
-
-[+] AUTHENTICATING TO MAINFRAME... ========== SUCCESS
-[+] DECRYPTING MISSION FILES...    ========== DONE
-[+] DOWNLOADING MISSION LOGS...
-
-+----+----------------------------------------------+--------------+---------------+
-| ID | MISSION NAME                                 | TYPE         | STATUS        |
-+----+----------------------------------------------+--------------+---------------+
-| 01 | NUTRI-PREDICT                                | [FULL-STACK] | > DONE        |
-|    | -> Variation de poids d'une portion.         |              |               |
-|    |    Certification RNCP 2026.                  |              |               |
-|    |    R2 0,985 sur donnees simulees.            |              |               |
-|    |    Regression lineaire : 0,959.              |              |               |
-+----+----------------------------------------------+--------------+---------------+
-| 02 | WILDAIPRINT                                  | [VISION]     | > RE-TESTED   |
-|    | -> 83 % annonces, 26 % sur un vrai jeu       |              |               |
-|    |    de test (38 photos). Fuite corrigee.      |              |               |
-|    |    github.com/Rateur/WildAIprint-Modele-CNN  |              |               |
-|    |    github.com/Rateur/wildaiprint-App         |              |               |
-+----+----------------------------------------------+--------------+---------------+
-| 03 | OBSERVATOIRE DE LA PARITE                    | [DATA]       | > DEPLOYED    |
-|    | -> 33 chaines sur 35 en 2020 : les femmes    |              |               |
-|    |    parlent moins de la moitie du temps.      |              |               |
-|    |    github.com/Rateur/opendata                |              |               |
-|    |    opendata2025.netlify.app                  |              |               |
-+----+----------------------------------------------+--------------+---------------+
-| 04 | IA DE FAMILLE                                | [IA LOCALE]  | > IN PROGRESS |
-|    | -> Assistant sur le NAS de la maison.        |              |               |
-|    |    Ollama, 1 RAG par personne,               |              |               |
-|    |    0 octet dans le cloud.                    |              |               |
-+----+----------------------------------------------+--------------+---------------+
-| 05 | SEVENARTLIST                                 | [FULL-STACK] | > IN PROGRESS |
-|    | -> Trouver un film, voir ou le regarder,     |              |               |
-|    |    suivre sa watchlist (Next.js, Supabase).  |              |               |
-|    |    github.com/Rateur/SevenArtList            |              |               |
-+----+----------------------------------------------+--------------+---------------+
-```
-
-<br>
-
-### <img src="https://api.iconify.design/mdi/layers-triple-outline.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Stack Technique
-
-```text
-vperies@bebop:~$ tree /mnt/brain/skills --dirsfirst
-
-/mnt/brain/skills
-|-- IA & ML
-|   |-- Modelisation ... scikit-learn, TensorFlow, Keras, MLflow
-|   '-- GenAI .......... LLM, MCP, n8n
-|
-|-- Data
-|   '-- Data ........... Python, Pandas, NumPy, Streamlit
-|
-|-- Back & MLOps
-|   |-- Back-End ....... FastAPI, Flask, SQL, SQLite
-|   '-- Ops ............ Docker, CI/CD, pytest
-|
-'-- Interface
-    '-- Front-End ...... Next.js, React, Three.js, WebGL
-
-4 directories, 6 modules -- all systems nominal
-```
-
-<br>
-
-### <img src="https://api.iconify.design/mdi/chart-timeline-variant-shimmer.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Stats
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Rateur&layout=compact&theme=tokyonight&bg_color=0D1117&hide_border=true&title_color=72FF72&text_color=42A852" alt="Langages les plus utilisés" />
+<img src="./assets/title-signal.svg" width="100%" alt="Session 04 — Signal : activité sur la grille" />
 
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake.svg">
-    <img alt="Snake Animation Cyberpunk" src="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
+    <img alt="Grille de contributions GitHub animée" src="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
   </picture>
 </p>
 
-<br>
+<br/>
 
-### <img src="https://api.iconify.design/mdi/music-note-eighth.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Now Playing
+<img src="./assets/title-soundtrack.svg" width="100%" alt="Session 05 — Bande-son : en écoute" />
 
-<a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31ab6e4pjziu6puiila6fgmlnepa&redirect=true">
-  <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31ab6e4pjziu6puiila6fgmlnepa&cover_image=true&theme=natemoo-re&show_offline=true&background_color=0D1117&interchange=true&bar_color=72FF72" alt="Now Playing on Spotify" />
-</a>
+<p align="center">
+  <a href="https://spotify-github-profile.kittinanx.com/api/view?uid=31ab6e4pjziu6puiila6fgmlnepa&redirect=true">
+    <img src="https://spotify-github-profile.kittinanx.com/api/view?uid=31ab6e4pjziu6puiila6fgmlnepa&cover_image=true&theme=natemoo-re&show_offline=true&background_color=0D1117&interchange=true&bar_color=72FF72" alt="En écoute sur Spotify" />
+  </a>
+</p>
 
-<br>
-
-### <img src="https://api.iconify.design/mdi/satellite-uplink.svg?color=%2372FF72" width="24" height="24" style="vertical-align: middle;" /> Secure Commlink
-
-```text
-vperies@bebop:~$ ./init_commlink.sh --encrypt --protocol=TLS1.3
-
-[+] GENERATING 4096-BIT RSA KEYS... ========== DONE
-[+] ESTABLISHING ENCRYPTED TUNNEL...
-[+] HANDSHAKE COMPLETE
-
-    +------------+--------------------------------------+
-    | LINKEDIN   | linkedin.com/in/valentin-peries      |
-    | E-MAIL     | contact@valentinperies.fr            |
-    | WEBSITE    | valentinperies.fr                    |
-    +------------+--------------------------------------+
-
-> SIGNAL STRENGTH: ========.. 82%
-> CONNECTION: SECURE
-> END OF TRANSMISSION.
-```
-
-<br>
+<br/>
 
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com/?font=Share+Tech+Mono&size=16&pause=3000&color=72FF72&center=true&vCenter=true&width=600&lines=See+You+Space+Cowboy..." alt="See You Space Cowboy..." />
 </p>
+
+<!-- Les SVG de ./assets sont générés par tools/build_assets.py : modifier les données en haut du script, puis relancer. -->
