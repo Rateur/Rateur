@@ -743,13 +743,18 @@ def fetch_live():
             if repo.lower() == f"{USER}/{USER}".lower() or e["type"] not in EVENT_LABEL:
                 continue
             p = e.get("payload", {})
-            detail = {"PushEvent": lambda: f"{p.get('size', len(p.get('commits', [])))} commit(s)",
-                      "CreateEvent": lambda: p.get("ref_type", ""),
+            ref = (p.get("ref") or "").replace("refs/heads/", "").replace("refs/tags/", "")
+            kind = {"branch": "branche", "tag": "tag", "repository": "dépôt"}.get(p.get("ref_type"), "")
+            detail = {"PushEvent": lambda: f"→ {ref}" if ref else "",
+                      "CreateEvent": lambda: f"{kind} {ref}".strip() if p.get("ref_type") != "repository" else "dépôt",
                       "ReleaseEvent": lambda: p.get("release", {}).get("tag_name", ""),
-                      "PullRequestEvent": lambda: p.get("action", ""),
+                      "PullRequestEvent": lambda: f"#{p.get('number', '')} {p.get('action', '')}",
                       "IssuesEvent": lambda: p.get("action", ""),
                       "WatchEvent": lambda: "", "ForkEvent": lambda: ""}[e["type"]]()
-            events.append({"date": e["created_at"], "type": e["type"], "repo": repo, "detail": detail})
+            item = {"date": e["created_at"], "type": e["type"], "repo": repo, "detail": detail}
+            if events and all(events[-1][k] == item[k] for k in ("type", "repo", "detail")):
+                continue
+            events.append(item)
             if len(events) == 4:
                 break
     except Exception as ex:
