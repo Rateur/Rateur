@@ -9,5 +9,5 @@ python tools/build_assets.py
 
 Pour changer un projet, une techno ou un texte : modifier le bloc `DONNÉES` en haut du script, puis relancer.
 
-- Polices (SIL Open Font License) : Bebas Neue, Share Tech Mono, DotGothic16.
+- Polices (SIL Open Font License) : Bebas Neue, Share Tech Mono, DotGothic16, Inter.
 - Icônes : Simple Icons (CC0), chemins copiés dans `icons.json`.
