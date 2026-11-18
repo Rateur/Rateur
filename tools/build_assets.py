@@ -704,7 +704,189 @@ def build_footer():
     d.save("footer")
 
 
+# ───────────────────────────── DONNÉES EN DIRECT (GitHub Actions) ─────────────────────────────
+import os, urllib.request, datetime
+
+USER = os.environ.get("PROFILE_USER", "Rateur")
+MOIS = ["JAN", "FÉV", "MAR", "AVR", "MAI", "JUIN", "JUIL", "AOÛT", "SEP", "OCT", "NOV", "DÉC"]
+EVENT_LABEL = {"PushEvent": "PUSH", "CreateEvent": "NOUVEAU", "ReleaseEvent": "RELEASE",
+               "PullRequestEvent": "PR", "IssuesEvent": "ISSUE", "WatchEvent": "STAR", "ForkEvent": "FORK"}
+
+
+def gh(url, body=None):
+    tok = os.environ.get("GITHUB_TOKEN")
+    req = urllib.request.Request(url, data=json.dumps(body).encode() if body else None,
+                                 headers={"Accept": "application/vnd.github+json", "User-Agent": "profile-builder",
+                                          **({"Authorization": f"Bearer {tok}"} if tok else {})})
+    with urllib.request.urlopen(req, timeout=20) as r:
+        return json.loads(r.read())
+
+
+def fetch_live():
+    """Calendrier de contributions, derniers événements publics, dernière version de Sumi."""
+    sample = os.environ.get("SIGNAL_SAMPLE")
+    if sample:
+        return json.loads(pathlib.Path(sample).read_text())
+    if not os.environ.get("GITHUB_TOKEN"):
+        return None
+    q = ('query($u:String!){user(login:$u){contributionsCollection{contributionCalendar{totalContributions '
+         'weeks{contributionDays{date contributionCount contributionLevel}}}}}}')
+    cal = gh("https://api.github.com/graphql", {"query": q, "variables": {"u": USER}})
+    cal = cal["data"]["user"]["contributionsCollection"]["contributionCalendar"]
+    L = {"NONE": 0, "FIRST_QUARTILE": 1, "SECOND_QUARTILE": 2, "THIRD_QUARTILE": 3, "FOURTH_QUARTILE": 4}
+    weeks = [[{"date": d["date"], "count": d["contributionCount"], "level": L[d["contributionLevel"]]}
+              for d in w["contributionDays"]] for w in cal["weeks"]]
+    events = []
+    try:
+        for e in gh(f"https://api.github.com/users/{USER}/events/public?per_page=40"):
+            repo = e["repo"]["name"]
+            if repo.lower() == f"{USER}/{USER}".lower() or e["type"] not in EVENT_LABEL:
+                continue
+            p = e.get("payload", {})
+            detail = {"PushEvent": lambda: f"{p.get('size', len(p.get('commits', [])))} commit(s)",
+                      "CreateEvent": lambda: p.get("ref_type", ""),
+                      "ReleaseEvent": lambda: p.get("release", {}).get("tag_name", ""),
+                      "PullRequestEvent": lambda: p.get("action", ""),
+                      "IssuesEvent": lambda: p.get("action", ""),
+                      "WatchEvent": lambda: "", "ForkEvent": lambda: ""}[e["type"]]()
+            events.append({"date": e["created_at"], "type": e["type"], "repo": repo, "detail": detail})
+            if len(events) == 4:
+                break
+    except Exception as ex:
+        print("  événements indisponibles :", ex)
+    sumi = None
+    try:
+        sumi = gh(f"https://api.github.com/repos/{USER}/sumi/releases/latest")["tag_name"]
+    except Exception as ex:
+        print("  version de Sumi indisponible :", ex)
+    return {"total": cal["totalContributions"], "weeks": weeks, "events": events, "sumi": sumi}
+
+
+def ship_shape():
+    """Vaisseau original vu de dessus, nez vers +x (≈ 34 × 24 px)."""
+    return (f'<g filter="url(#glow)">'
+            f'<path d="M-15 -3 L-20 -2 L-20 2 L-15 3 Z" fill="{AMBER}"><animate attributeName="opacity" values="1;.4;1" dur=".18s" repeatCount="indefinite"/></path>'
+            f'<path d="M-18 -1.2 L-30 0 L-18 1.2 Z" fill="{AMBER}" opacity=".7"><animate attributeName="d" values="M-18 -1.2 L-30 0 L-18 1.2 Z;M-18 -1.2 L-25 0 L-18 1.2 Z;M-18 -1.2 L-30 0 L-18 1.2 Z" dur=".14s" repeatCount="indefinite"/></path></g>'
+            f'<path d="M-6 -3 L-14 -12 L-10 -12.5 L4 -3.5 Z M-6 3 L-14 12 L-10 12.5 L4 3.5 Z" fill="{G[3]}"/>'
+            f'<path d="M-14 -12 L-10 -12.5 L-9 -10.5 L-13 -10.2 Z M-14 12 L-10 12.5 L-9 10.5 L-13 10.2 Z" fill="{G[4]}"/>'
+            f'<path d="M-16 -3.4 L8 -3 L17 0 L8 3 L-16 3.4 Z" fill="{INK}"/>'
+            f'<path d="M6 -6 L11 -1.6 L9 -1.4 Z M6 6 L11 1.6 L9 1.4 Z" fill="{G[3]}"/>'
+            f'<path d="M-2 -1.7 L7 -1.2 L10 0 L7 1.2 L-2 1.7 Z" fill="{BG}"/>'
+            f'<path d="M3 -1 L8 -.6" stroke="{G[4]}" stroke-width=".8"/>'
+            f'<rect x="-13" y="-.6" width="9" height="1.2" fill="{G[2]}"/>')
+
+
+def build_signal(live):
+    if not live:
+        print("  signal : pas de données (GITHUB_TOKEN absent), fichier conservé")
+        return
+    W, H = 880, 300
+    P, C, X0, Y0 = 15, 11, 44, 70
+    weeks = live["weeks"][-53:]
+    total = live["total"] if live["total"] is not None else sum(d["count"] for w in weeks for d in w)
+    d = Doc(W, H, f"{total} contributions sur les 12 derniers mois, récoltées par un vaisseau")
+    frame(d)
+    d.defs.append('<filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="1.6" result="b"/>'
+                  '<feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>')
+    d.defs.append('<filter id="drop" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#000" flood-opacity=".7"/></filter>')
+    g, w = d.text(f"{total}", 24, 40, 30, BEBAS, G[4], ls=1); d.add(g)
+    g, _ = d.text("contributions · 12 derniers mois", 24 + w + 10, 38, 12, MONO, DIM); d.add(g)
+    today = datetime.datetime.now(datetime.timezone.utc)
+    g, _ = d.text(f"MAJ {today:%d.%m.%Y}", W - 24, 38, 11, MONO, DIM, ls=1.5, anchor="end"); d.add(g)
+    # mois
+    last = None
+    for i, wk in enumerate(weeks):
+        m = int(wk[0]["date"][5:7])
+        if m != last and i < len(weeks) - 2:
+            g, _ = d.text(MOIS[m - 1], X0 + i * P, Y0 - 8, 9.5, MONO, DIM); d.add(g)
+            last = m
+    # route : plus proche voisin parmi les cellules allumées
+    cells = {}
+    for i, wk in enumerate(weeks):
+        for day in wk:
+            j = datetime.date.fromisoformat(day["date"]).isoweekday() % 7
+            cells[(i, j)] = day["level"]
+    lit = [k for k, v in cells.items() if v > 0]
+    # route en lacets, semaine par semaine (comme un balayage de radar)
+    route, down = [], True
+    for i in range(len(weeks)):
+        col = sorted((k for k in lit if k[0] == i), key=lambda k: k[1], reverse=not down)
+        if col:
+            route += col
+            down = not down
+    cpos = lambda k: (X0 + k[0] * P + C / 2, Y0 + k[1] * P + C / 2)
+    pts = [(X0 - 120, Y0 + 3 * P)] + [cpos(k) for k in route] + [(W + 60, Y0 + 3 * P)]
+    # lissage Catmull-Rom échantillonné → polyligne + abscisse curviligne
+    poly, arc, s = [], [], 0.0
+    hit_at = {}
+    for i in range(len(pts) - 1):
+        p0, p1, p2, p3 = pts[max(0, i - 1)], pts[i], pts[i + 1], pts[min(len(pts) - 1, i + 2)]
+        n = max(2, int(math.dist(p1, p2) / 4))
+        for t in [k / n for k in range(n)]:
+            t2, t3 = t * t, t * t * t
+            x = .5 * ((2 * p1[0]) + (-p0[0] + p2[0]) * t + (2 * p0[0] - 5 * p1[0] + 4 * p2[0] - p3[0]) * t2 + (-p0[0] + 3 * p1[0] - 3 * p2[0] + p3[0]) * t3)
+            y = .5 * ((2 * p1[1]) + (-p0[1] + p2[1]) * t + (2 * p0[1] - 5 * p1[1] + 4 * p2[1] - p3[1]) * t2 + (-p0[1] + 3 * p1[1] - 3 * p2[1] + p3[1]) * t3)
+            if poly:
+                s += math.dist(poly[-1], (x, y))
+            poly.append((x, y)); arc.append(s)
+        if 1 <= i + 1 <= len(route):
+            hit_at[route[i]] = s + math.dist(poly[-1], p2)
+    poly.append(pts[-1]); s += math.dist(poly[-2], poly[-1]); arc.append(s)
+    SPEED, LEAD = 170.0, .45  # vitesse (px/s), avance du vaisseau sur sa traînée (s)
+    fly = s / SPEED
+    T = fly + 2.5
+    path = "M" + " L".join(f"{x:.1f} {y:.1f}" for x, y in poly)
+    # cellules : allumées → flash → récoltées → reviennent en fin de boucle
+    for (i, j), lvl in cells.items():
+        x, y = X0 + i * P, Y0 + j * P
+        if lvl == 0 or (i, j) not in hit_at:
+            d.add(f'<rect x="{x}" y="{y}" width="{C}" height="{C}" rx="2" fill="{G[0]}"/>')
+            continue
+        t = ((hit_at[(i, j)] / SPEED - LEAD) % T) / T
+        t1, t2 = min(.995, t + .012), min(.996, t + .05)
+        d.add(f'<rect x="{x}" y="{y}" width="{C}" height="{C}" rx="2" fill="{G[lvl]}">'
+              f'<animate attributeName="fill" values="{G[lvl]};{G[lvl]};{INK};{G[0]};{G[0]};{G[lvl]}" '
+              f'keyTimes="0;{t:.4f};{t1:.4f};{t2:.4f};.985;1" dur="{T:.2f}s" repeatCount="indefinite"/></rect>')
+        if lvl >= 3:
+            cx_, cy_ = x + C / 2, y + C / 2
+            d.add(f'<circle cx="{cx_}" cy="{cy_}" r="4" fill="none" stroke="{G[4]}" stroke-width="1" opacity="0">'
+                  f'<animate attributeName="r" values="4;4;16;16" keyTimes="0;{t:.4f};{min(.999, t+.03):.4f};1" dur="{T:.2f}s" repeatCount="indefinite"/>'
+                  f'<animate attributeName="opacity" values="0;0;.9;0;0" keyTimes="0;{max(0,t-.0005):.4f};{t:.4f};{min(.999, t+.03):.4f};1" dur="{T:.2f}s" repeatCount="indefinite"/></circle>')
+    # traînée (copies décalées sur la même trajectoire) puis vaisseau
+    kp = f'keyPoints="0;1;1" keyTimes="0;{fly/T:.4f};1" calcMode="linear"'
+    for k in range(6, 0, -1):
+        begin = -(LEAD - k * .07)
+        d.add(f'<rect x="-1.6" y="-1.6" width="3.2" height="3.2" rx=".8" fill="{G[4]}" opacity="{.5 - k*.07:.2f}">'
+              f'<animateMotion {kp} dur="{T:.2f}s" begin="{begin:.2f}s" repeatCount="indefinite"><mpath href="#flight"/></animateMotion></rect>')
+    d.defs.append(f'<path id="flight" d="{path}"/>')
+    d.add(f'<g filter="url(#drop)"><g>{ship_shape()}'
+          f'<animateMotion {kp} dur="{T:.2f}s" begin="-{LEAD}s" rotate="auto" repeatCount="indefinite"><mpath href="#flight"/></animateMotion></g></g>')
+    # journal : derniers signaux publics
+    y = Y0 + 7 * P + 24
+    d.add(f'<line x1="24" y1="{y}" x2="{W-24}" y2="{y}" stroke="{EDGE}"/>')
+    evs = live.get("events") or []
+    if not evs:
+        g, _ = d.text("aucun signal public récent", 24, y + 28, 12, MONO, DIM); d.add(g)
+    for n, e in enumerate(evs):
+        yy = y + 28 + n * 21
+        when = datetime.datetime.fromisoformat(e["date"].replace("Z", "+00:00"))
+        cols = [(f"{when:%d.%m}", 24, DIM), (EVENT_LABEL.get(e["type"], e["type"]), 94, G[4]),
+                (e["repo"].split("/")[-1], 194, INK), (e["detail"], 470, G[3])]
+        parts = "".join(d.text(txt, xx, yy, 12.5, MONO, col)[0] for txt, xx, col in cols if txt)
+        d.add(f'<g opacity="0">{parts}<animate attributeName="opacity" from="0" to="1" begin="{.3 + n*.25:.2f}s" dur=".4s" fill="freeze"/></g>')
+    d.save("signal")
+
+
 if __name__ == "__main__":
     OUT.mkdir(exist_ok=True)
     print("Génération des assets :")
     build_banner(); build_radar(); build_bounty(); build_missions(); build_sumi(); build_titles(); build_buttons(); build_footer()
+    live = None
+    try:
+        live = fetch_live()
+    except Exception as ex:
+        print("  données en direct indisponibles :", ex)
+    if live and live.get("sumi"):
+        SUMI["version"] = f"{live['sumi']} · MIT"
+        build_sumi()
+    build_signal(live)

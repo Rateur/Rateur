@@ -45,11 +45,7 @@
 <img src="./assets/title-signal.svg" width="100%" alt="Signal" />
 
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake.svg">
-    <img alt="Grille de contributions GitHub animée" src="https://raw.githubusercontent.com/Rateur/Rateur/output/github-contribution-grid-snake-dark.svg">
-  </picture>
+  <img src="./assets/signal.svg" width="100%" alt="Grille de contributions des 12 derniers mois, récoltée par un vaisseau, et derniers signaux publics" />
 </p>
 
 <br/>

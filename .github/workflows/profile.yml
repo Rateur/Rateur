@@ -1,0 +1,46 @@
+name: Profil
+
+# Régénère les visuels avec les données du jour :
+# grille de contributions récoltée par le vaisseau, derniers signaux publics, version de Sumi.
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main, refonte-v2]
+    paths: ["tools/**", ".github/workflows/profile.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install fonttools
+
+      - name: Générer les SVG
+        run: python tools/build_assets.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PROFILE_USER: ${{ github.repository_owner }}
+
+      - name: Publier
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets
+          git diff --cached --quiet && exit 0
+          git commit -m "Signal : données du $(date -u +%d.%m.%Y)"
+          git push
